@@ -1,3 +1,5 @@
+#if desktop
+	
 package;
 
 import Sys.sleep;
@@ -107,3 +109,4 @@ class DiscordClient
 	} //werid about you can do something of this in lua
 	#end
 }
+#end
