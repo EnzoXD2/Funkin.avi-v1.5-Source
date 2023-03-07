@@ -1636,6 +1636,10 @@ class PlayState extends MusicBeatState
 		eventPushedMap.clear();
 		eventPushedMap = null;
 
+                #if android
+		addAndroidControls();
+		#end
+
 		// After all characters being loaded, it makes then invisible 0.01s later so that the player won't freeze when you change characters
 		// add(strumLine);
 
@@ -2090,6 +2094,14 @@ class PlayState extends MusicBeatState
 		songBannerText.visible = !ClientPrefs.hideHud;
 		add(songBannerText);
 
+               var creditTxt = new FlxText(876, 648, 348);
+               creditTxt.text = "Port By Enzo"; creditTxt.setFormat(Paths.font("vcr.ttf"), 30, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE,FlxColor.BLACK);
+               creditTxt.scrollFactor.set();
+               add(creditTxt);
+		if(ClientPrefs.downScroll) {
+			 creditTxt.y = 148;
+		}
+
 		var filmScratch:BGSprite = new BGSprite('funkinAVI-filters/scratchShit', 0, 0, 1, 1, ['scratch thing 1'], true);
 		var filmScratchGame:BGSprite = new BGSprite('funkinAVI-filters/scratchShit', 0, 0, 1, 1, ['scratch thing 1'], true);
 		filmScratchGame.alpha = 0.5;
@@ -2110,6 +2122,7 @@ class PlayState extends MusicBeatState
 		healthBarBG.cameras = [camHUD];
 		iconP1.cameras = [camHUD];
 		iconP2.cameras = [camHUD];
+                creditTxt.cameras = [camHUD];
 		scoreTxt.cameras = [camHUD];
 		botplayTxt.cameras = [camHUD];
 		laneunderlay.cameras = [camHUD];
@@ -2117,6 +2130,12 @@ class PlayState extends MusicBeatState
 		timeBar.cameras = [camHUD];
 		timeBarBG.cameras = [camHUD];
 		timeTxt.cameras = [camHUD];
+
+                #if android
+		addAndroidControls();
+		androidControls.visible = true;
+		#end
+
 		switch(curStage)
 		{
 			case 'EndlessLoop' | 'Forest' | 'Office' | 'Steamboat' | 'Studio' | 'ForestNEW' | 'LegacyLoop':
