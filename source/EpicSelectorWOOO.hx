@@ -234,10 +234,6 @@ class EpicSelectorWOOO extends MusicBeatState {
 							chrom = new ChromaticAberrationEffect();
 							blurThisShit = new TiltshiftEffect(0.6, 0);
 
-							distort = new WIDistortionEffect(0.75, 0.25, false);
-							distort.shader.working.value = [true];
-
-							addShader(distort);
 							addShader(chrom);
 							addShader(blurThisShit);
 
@@ -247,8 +243,6 @@ class EpicSelectorWOOO extends MusicBeatState {
 							if(blurThisShit != null)
 							blurThisShit.setBlur(0.6);
 
-							if (distort != null)
-							distort.shader.working.value = [true];
 							}
 
 						}else if(curSelected == 1 && FPClientPrefs.isolatedSong != 'Completed' || FPClientPrefs.lunacySong != 'Completed' || FPClientPrefs.twistedSong != 'Completed' || FPClientPrefs.huntedLock != 'beaten' || FPClientPrefs.malfunctionLock != 'beaten' || FPClientPrefs.sinsLock != 'beaten' || FPClientPrefs.oldisolateLock != 'beaten'){
