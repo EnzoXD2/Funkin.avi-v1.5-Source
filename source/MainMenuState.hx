@@ -500,6 +500,10 @@ class MainMenuState extends MusicBeatState
 			LOGTEXT.borderSize = 0.6;
 			add(LOGTEXT);
 		}
+		
+		#if android
+		addVirtualPad(UP_DOWN, A_B);
+		#end
 
 		super.create();
 }
