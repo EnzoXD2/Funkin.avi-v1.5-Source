@@ -119,7 +119,7 @@
 	<haxelib name="faxe" if='switch'/>
 	<haxelib name="discord_rpc" if="desktop"/>
 	<!--Gamejolt stuff-->
-	<haxelib name="tentools" />
+	<haxelib name="tentools"
     <haxelib name="systools" />
     <ndll name="systools" haxelib="systools" />
 	<!-- <haxelib name="hxcpp-debug-server" if="desktop"/> -->
