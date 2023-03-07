@@ -103,8 +103,10 @@ class TitleState extends MusicBeatState
 
 	override public function create():Void
 	{
-		GameJolt.GameJoltAPI.connect();
-        GameJolt.GameJoltAPI.authDaUser(FlxG.save.data.gjUser, FlxG.save.data.gjToken);
+		
+		#if android
+		FlxG.android.preventDefaultKeys = [BACK];
+		#end
 
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
