@@ -287,6 +287,10 @@ class CreditsState extends MusicBeatState
 		grain.scale.y = 1.1;
 		add(grain);
 		
+		#if android
+		addVirtualPad(UP_DOWN, A_B);
+		#end
+		
 		super.create();
 	}
 
